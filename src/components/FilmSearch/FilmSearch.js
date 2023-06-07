@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 
-function FilmSearch({ onSearch }) {
+function FilmSearch({ onSearch, genres }) { // Add genres as props
   const [value, setValue] = useState('action');
 
   const handleChange = (event) => {
@@ -17,9 +17,9 @@ function FilmSearch({ onSearch }) {
         <label>
           Pick your favorite genre:
           <select value={value} onChange={handleChange}>
-            <option value="action">Action</option>
-            <option value="comedy">Comedy</option>
-            <option value="thriller">Thriller</option>
+            {genres.map(genre => ( // Map over genres to create an option for each one
+              <option key={genre.id} value={genre.id}>{genre.name}</option>
+            ))}
           </select>
         </label>
       </div>

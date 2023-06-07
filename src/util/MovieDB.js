@@ -18,9 +18,17 @@ const MovieDB = {
         const randomIndex = Math.floor(Math.random() * resultsPerPage);
         const randomMovie = data.results[randomIndex];
         console.log(randomMovie);
+        console.log(genre);
         return randomMovie;
       })
       .catch(err => console.error(err));
+  },
+
+  getGenres() {
+    return fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
+    .then(response => response.json())
+    .then(response => response.genres) // Return the genres
+    .catch(err => console.error(err));
   }
 };
 
