@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 
-function FilmSearch(props) {
+function FilmSearch({ onSearch }) {
   const search = useCallback(() => {
-    props.onSearch();
-  }, [props.onSearch]);
+    onSearch();
+  }, [onSearch]);
 
   return (
     <div>
