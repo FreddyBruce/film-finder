@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useCallback } from "react";
 
-function FilmSearch() {
-    return (
-      <div>
-        <button>FIND A FILM</button>
-      </div>
-    );
-  }
-  
-  export default FilmSearch;
+function FilmSearch(props) {
+  const search = useCallback(() => {
+    props.onSearch();
+  }, [props.onSearch]);
+
+  return (
+    <div>
+      <button onClick={search}>FIND A FILM</button>
+    </div>
+  );
+}
+
+export default FilmSearch;

@@ -1,12 +1,18 @@
 import React from "react";
 
 function Movie(props) {
-    return (
-      <div>
-        <h2>{props.film.name}</h2>
-        <p>{props.film.description}</p>
-      </div>
-    );
+  if (!props.movie) {
+    return <div>No movie found, please click to search a movie</div>;
   }
-  
-  export default Movie;
+
+  return (
+    <div>
+      <h2>{props.movie.title}</h2>
+      <p>{props.movie.overview}</p>
+      <p>{props.movie.popularity}</p>
+      <p>{props.movie.vote_average}</p>
+    </div>
+  );
+}
+
+export default Movie;

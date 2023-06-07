@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState, useCallback } from "react";
 import Movie from '../Movie/Movie';
 import FilmSearch from '../FilmSearch/FilmSearch';
+import MovieDB from "../../util/MovieDB";
 import './App.css';
 
-const film = {
-  name: "Lord of the Rings",
-  description: "This is a description of the film plot"
-};
-
 function App() {
+  const [movieSearch, setMovieSearch] = useState();
+
+  const search = useCallback(() => {
+    MovieDB.getMovies().then(setMovieSearch);
+  }, []);
+
+
   return (
     <div className="App">
       <h1>What film should I watch</h1>
-      <FilmSearch></FilmSearch>
-      <Movie film={film} />
+      <FilmSearch onSearch={search}></FilmSearch>
+      <Movie movie={movieSearch} />
     </div>
   );
 }
