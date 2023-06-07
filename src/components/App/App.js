@@ -7,8 +7,8 @@ import './App.css';
 function App() {
   const [movieSearch, setMovieSearch] = useState();
 
-  const search = useCallback(() => {
-    MovieDB.getMovies().then(setMovieSearch);
+  const search = useCallback((genre) => {
+    MovieDB.getMovies(genre).then(setMovieSearch);
   }, []);
 
 
