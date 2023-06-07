@@ -2,7 +2,7 @@ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: `Bearer ${process.env.MOVIEDB_API_KEY}`
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MzdhNzljMTUxZWZmMjk3YmZlMTk0Zjk1ZWU5ODg3NCIsInN1YiI6IjY0NzhjODU1MDc2Y2U4MDBhODIyMzgwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.i81-iCr9sMNCoeYWH0RYlTQR-iS43aw5gzPOnrraa3E'
   }
 };
 
